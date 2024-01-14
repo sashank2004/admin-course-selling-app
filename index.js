@@ -4,6 +4,8 @@ const cors = require('cors');
 const adminRouter = require("./routes/admin");
 const userRouter = require("./routes/user");
 
+const PORT = process.env.PORT || 3000;
+
 
 const app = express();
 
@@ -18,4 +20,4 @@ app.use("/user", userRouter)
 // DONT MISUSE THIS THANKYOU!!
 mongoose.connect('mongodb+srv://sashanksingh:aWBnOSl6uT6n921Y@cluster0.7bqc9mj.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "courses" });
 
-app.listen(3000, () => console.log('Server running on port 3000'));
+app.listen(PORT, () => console.log('Server running on port 3000'));
